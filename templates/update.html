@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<table>
+    <tr class="spaceRight">
+        <td class="column">
+            <img src="https://prodwritenode.heartfulness.org/en/wp-content/uploads/2020/04/hfn-meditation-banner-image.png"
+                width="500" height="500" alt="Men in heartfulness meditation prayer" class="img-fluid">
+        </td>
+        <td>
+            
+        </td>
+        <td class="column mx-10">
+            <div class="container">
+                <h2 style="color:rgb(45, 93, 133);">Update your Journal</h2>
+                <form action="/update/{{ todo.sno }}" method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Heartfulness Practice</label>
+                        <input type="text" class="form-control" id="title" value="{{ todo.title }}" name="title"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">Journal your Experience</label>
+                        <input type="text" class="form-control" value="{{ todo.desc }}" name="desc" id="desc">
+                    </div>
+                    <button type="submit" class="btn btn-success"
+                        style="color:rgb(255, 255, 255); background-color:rgb(45, 93, 133);">Update</button>
+                </form>
+            </div>
+
+        </td>
+
+    </tr>
+</table>
+
+{% endblock body %}
